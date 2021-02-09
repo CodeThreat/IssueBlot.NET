@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "ShowBill";
+}
+
+<h2>ShowBill</h2>
+
+<!-- CTSECISSUE:StoredXSS -->
+@Html.Raw(ViewBag.BillDescription)
+

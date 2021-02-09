@@ -1,0 +1,42 @@
+1. InsecureRequestValidationMode  
+
+4.0 (the default). The HttpRequest object internally sets a flag that indicates that request validation should be triggered whenever any HTTP request data is accessed. This guarantees that the request validation is triggered before data such as cookies and URLs are accessed during the request. The request validation settings of the pages element (if any) in the configuration file or of the @ Page directive in an individual page are ignored.  
+2.0. Request validation is enabled only for pages, not for all HTTP requests. In addition, the request validation settings of the pages element (if any) in the configuration file or of the @ Page directive in an individual page are used to determine which page requests to validate.  
+
+Ref:  https://docs.microsoft.com/en-us/dotnet/api/system.web.configuration.httpruntimesection.requestvalidationmode?redirectedfrom=MSDN&view=netframework-4.8#System_Web_Configuration_HttpRuntimeSection_RequestValidationMode  
+https://stackoverflow.com/q/7740944  
+
+2. Hardcoded Password  
+
+System.Security.NetworkCredential  
+
+Example:  (the second argument)  
+
+var credential = new NetworkCredential("", "");  
+
+3. Insecure Password
+
+using System.Web.Security.Membership;
+return GeneratePassword(8, 2);
+
+public static string GeneratePassword (int length, int numberOfNonAlphanumericCharacters);
+
+-- if second argument is hardcoded & less than 2
+-- if first argument is hardcoded & less than 6
+
+4. Lower Severity of Http Response Splitting (or find out it's .NET framework version)
+
+5. Web.Config, 
+
+<system.web> -> <authentication -> <forms -> <credentials passwordFormat="Clear">
+<system.web> -> <authentication -> <forms requireSSL="false"
+
+Example:
+
+<forms name="customer_login" timeout="30" loginUrl="~/WebGoatCoins/CustomerLogin.aspx" requireSSL="false" protection="All" path="/">
+				<credentials passwordFormat="Clear">
+					<user name="admin" password="admin" />
+					<user name="mario" password="luigi" />
+					<user name="bob" password="password" />
+				</credentials>
+			</forms>

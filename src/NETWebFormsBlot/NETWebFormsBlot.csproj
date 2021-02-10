@@ -126,6 +126,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="HttpFileCase.aspx" />
     <Content Include="ParameterOverloading.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpFileCase.aspx.cs">
+      <DependentUpon>HttpFileCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HttpFileCase.aspx.designer.cs">
+      <DependentUpon>HttpFileCase.aspx</DependentUpon>
     </Compile>
     <Compile Include="ParameterOverloading.aspx.cs">
       <DependentUpon>ParameterOverloading.aspx</DependentUpon>

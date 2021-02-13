@@ -77,7 +77,7 @@
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharePoint.15.0.0\lib\Microsoft.SharePoint\Microsoft.SharePoint.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SharePoint.dll.15.0.4867.1000\lib\Microsoft.SharePoint\Microsoft.SharePoint.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.dll</HintPath>
@@ -87,6 +87,9 @@
     </Reference>
     <Reference Include="Microsoft.SharePoint.Client.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\SharePoint.Client.Search.15.0.0\lib\Microsoft.SharePoint.Client.Search\Microsoft.SharePoint.Client.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharePoint.Client.ServerRuntime.15.0.0\lib\Microsoft.SharePoint.Client.ServerRuntime\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\SharePoint.Search.15.0.0\lib\Microsoft.SharePoint.Search\Microsoft.SharePoint.Search.dll</HintPath>
@@ -210,6 +213,7 @@
     <Compile Include="Controllers\SQLInjController.cs" />
     <Compile Include="Controllers\SSRFController.cs" />
     <Compile Include="Controllers\StreamWriterRelatedCasesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WebService\MyWebService.asmx.cs">
       <DependentUpon>MyWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -221,6 +225,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BillRepository.cs" />
     <Compile Include="Utility\IBValidator.cs" />
@@ -263,6 +268,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ShowBill.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

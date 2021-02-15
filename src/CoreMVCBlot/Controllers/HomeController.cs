@@ -19,6 +19,7 @@ namespace CoreMVCBlot.Controllers
         {
             ViewBag.Name = name;
             ViewData["Address"] = address;
+            ViewData["Host"] = Request.Host; // this is a source
             return View();
         }
 

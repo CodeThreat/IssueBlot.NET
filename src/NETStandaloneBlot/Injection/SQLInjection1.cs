@@ -25,8 +25,7 @@ namespace NETStandaloneBlot.Injection
             {
                 SqlCommand sqlComm = new SqlCommand();
                 sqlComm.Connection = con;
-                // CTSECISSUE: SQLInjection
-                // CTSECISSUE: Insecure Database Administrative Mechanism
+                // CTSECISSUE: InsecureDatabaseAdministrativeMechanism
                 sqlComm.CommandText = System.Console.ReadLine();
                 con.Open();
                 SqlDataReader DR = sqlComm.ExecuteReader();

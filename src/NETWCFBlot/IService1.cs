@@ -58,6 +58,8 @@ namespace NETWCFBlot
                     smb = new ServiceMetadataBehavior();
                 }
                 // CTSECISSUE:WCFUnsafeMetadataPublishing
+                /* FLOW:IService1.cs - smb.HttpGetEnabled:wcf.unsafe.metadata.publishing:0+:FIND_ISSUE:1:
+                */
                 smb.HttpGetEnabled = true;
                 svcHost.Description.Behaviors.Add(smb);
             }

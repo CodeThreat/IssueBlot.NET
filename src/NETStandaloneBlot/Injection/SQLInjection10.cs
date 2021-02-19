@@ -11,14 +11,11 @@ namespace NETStandaloneBlot.Injection
     { 
         public void Run()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("SELECT * FROM users WHERE ( name = '" + System.Console.ReadLine() + "')");
 
             using (SqlConnection con = new SqlConnection(""))
             {
-                string s = System.Console.ReadLine();
                 // CTSECISSUE: SQLInjection
-                SqlCommand sc = new SqlCommand(s, con);
+                SqlCommand sc = new SqlCommand("SELECT * FROM users WHERE ( name = '" + System.Console.ReadLine() + "')", con);
                 con.Open();
                 SqlDataReader DR = sc.ExecuteReader();
             }

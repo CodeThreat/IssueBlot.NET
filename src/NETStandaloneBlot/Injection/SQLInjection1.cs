@@ -30,6 +30,28 @@ namespace NETStandaloneBlot.Injection
                 con.Open();
                 SqlDataReader DR = sqlComm.ExecuteReader();
             }
-        }    
+
+            using (SqlConnection con = new SqlConnection(""))
+            {
+                // possible sql injection, if SP_GetVuln uses dynamically constructed sql queries
+
+                SqlCommand cmd = new SqlCommand("EXEC SP_GetVuln @sID", con);
+                // CTSECISSUE: SQLInjection
+                cmd.Parameters.Add(new SqlParameter("@sID", System.Console.ReadLine()));
+                cmd.CommandType = System.Data.CommandType.Text;
+                SqlDataReader rdr = cmd.ExecuteReader();                
+            }
+
+
+            using (SqlConnection con = new SqlConnection(""))
+            {
+                // possible sql injection, if SP_GetVuln uses dynamically constructed sql queries
+                SqlCommand cmd = new SqlCommand("SP_GetVuln", con);
+                // CTSECISSUE: SQLInjection
+                cmd.Parameters.Add(new SqlParameter("@sID", System.Console.ReadLine()));
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader rdr = cmd.ExecuteReader();
+            }
+        }
     }
 }

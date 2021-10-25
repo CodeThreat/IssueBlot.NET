@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using System.Web.UI.HtmlControls;
 
 namespace NETMVCBlot.Controllers
@@ -145,6 +146,19 @@ namespace NETMVCBlot.Controllers
             cookie.Domain = ".example.com";
 
             return View();
+        }
+        public void LosFormatterDeserialization(string json)
+        {
+            try
+            {
+                // ruleid: insecure-losformatter-deserialization
+                LosFormatter losFormatter = new LosFormatter();
+                object obj = losFormatter.Deserialize(json);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

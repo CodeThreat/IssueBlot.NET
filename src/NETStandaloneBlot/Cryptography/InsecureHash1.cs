@@ -38,6 +38,10 @@ namespace NETStandaloneBlot.Cryptography
             // CTSECISSUE:InsecureCryptographicHash 2
             var sha2Managedsecond = new SHA256Managed();
             hashValue = sha2Managed.ComputeHash(new byte[] { });
+
+            // CTSECISSUE:InsecureCryptographicHash3 
+            var sha3Managedsecond = new SHA256Managed();
+            hashValue = sha2Managed.ComputeHash(new byte[] { });
         }
     }
 }

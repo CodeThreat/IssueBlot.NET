@@ -23,6 +23,10 @@ namespace NETMVCBlot.Controllers
             // CTSECISSUE:HTTPCookieInjection
             var cookie = new CookieHeaderValue("lastpersonname", person.Name);
             resp.Headers.AddCookies(new CookieHeaderValue[] { cookie });
+			
+			   // CTSECISSUE:HTTPCookieInjection
+            var cookie2 = new CookieHeaderValue("lastpersonname", person.Name);
+            resp.Headers.AddCookies(new CookieHeaderValue[] { cookie2 });
 
             return resp;
         }

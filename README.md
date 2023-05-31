@@ -97,6 +97,6 @@ For any questions or discussions, please open an issue on this repository, and w
 [issues-shield]: https://img.shields.io/github/issues/CodeThreat/IssueBlot.NET.svg?style=flat-square
 [issues-url]: https://github.com/othneildrew/IssueBlot.NET/issues
 [license-shield]: https://img.shields.io/github/license/CodeThreat/IssueBlot.NET.svg?style=flat-square
-[license-url]: https://github.com/CodeThreat/IssueBlot.NET/blob/master/LICENSE
+[license-url]: https://github.com/CodeThreat/IssueBlot.NET/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/codethreat
